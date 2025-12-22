@@ -1,0 +1,402 @@
+:root {
+    --bg: #0b0f17;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --line: rgba(255, 255, 255, 0.08);
+    --accent: #60a5fa;
+    --accent2: #34d399;
+    --max: 1040px;
+    --r: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    background: radial-gradient(1200px 600px at 20% -10%,
+            rgba(96, 165, 250, 0.25),
+            transparent 60%),
+        radial-gradient(900px 500px at 90% 0%,
+            rgba(52, 211, 153, 0.18),
+            transparent 55%),
+        var(--bg);
+    color: var(--text);
+}
+
+a {
+    color: inherit;
+}
+
+.wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 28px 18px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.brand {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+
+.nav {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    opacity: 0.9;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.nav a:hover {
+    border-bottom-color: var(--line);
+}
+
+.hero {
+    padding: 48px 0 18px;
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+}
+
+.heroGrid {
+    grid-template-columns: 1.2fr 0.8fr;
+}
+
+.h1 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+}
+
+.sub {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 62ch;
+}
+
+.cta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+}
+
+.btnPrimary {
+    background: linear-gradient(135deg,
+            rgba(96, 165, 250, 0.18),
+            rgba(52, 211, 153, 0.14));
+}
+
+.btn:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.card {
+    background: rgba(17, 24, 39, 0.72);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 16px;
+}
+
+.kpi {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.kpi strong {
+    font-size: 22px;
+    display: block;
+}
+
+.kpi span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.section {
+    padding: 26px 0;
+}
+
+.title {
+    font-size: 18px;
+    margin: 0 0 12px;
+    letter-spacing: 0.01em;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.item h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.step b {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.pill {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.heroAside {
+    display: grid;
+    gap: 12px;
+}
+
+.profile {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.profile b {
+    display: block;
+}
+
+.profile span {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.cases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.caseTop {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.metric {
+    font-weight: 700;
+}
+
+.delta {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.pricing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.priceTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer {
+    padding: 28px 0;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    margin-top: 24px;
+}
+
+/* Refactor: previously inline styles */
+.pillRow {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.mutedBlock {
+    display: block;
+    color: var(--muted);
+}
+
+.mutedBlockTight {
+    margin-top: 6px;
+    display: block;
+    color: var(--muted);
+}
+
+.cardNote {
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.cardNoteTitle {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.caseTopTight {
+    margin-top: 0;
+}
+
+.caseText {
+    margin: 0;
+    color: var(--muted);
+}
+
+.casesNote {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.listMuted {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    color: var(--muted);
+}
+
+.contactCard {
+    padding: 18px;
+}
+
+.contactTitle {
+    margin-bottom: 8px;
+}
+
+.contactSub {
+    margin: 0 0 14px;
+}
+
+.footerRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .heroGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cases {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing {
+        grid-template-columns: 1fr;
+    }
+
+    .h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 520px) {
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi {
+        grid-template-columns: 1fr 1fr;
+    }
+}
