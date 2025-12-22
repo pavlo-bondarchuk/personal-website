@@ -38,6 +38,33 @@ a {
     padding: 28px 18px;
 }
 
+#headerSpacer {
+    height: 0;
+}
+
+.siteHeader {
+    transition: transform 160ms ease, opacity 160ms ease, background-color 160ms ease,
+        border-color 160ms ease;
+    will-change: transform;
+}
+
+.siteHeader.isSticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    transform: translateY(-8px);
+    opacity: 0;
+}
+
+.siteHeader.isSticky.isShown {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .top {
     display: flex;
     align-items: center;
