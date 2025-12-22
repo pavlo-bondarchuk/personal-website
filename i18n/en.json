@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "WordPress Developer — optimization, fixes, improvements",
+    "description": "WordPress developer with 10+ years of experience: 500+ projects, 100+ performance optimizations, 300+ fixes and improvements. Fast, clean, with results."
+  },
+  "brand": {
+    "title": "Pavlo • WordPress Developer"
+  },
+  "nav": {
+    "services": "Services",
+    "process": "How I work",
+    "cases": "Cases",
+    "formats": "Formats",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "WordPress developer with 10+ years of experience: optimization, fixes, improvements",
+    "subtitle": "I make websites faster, more stable, and more convenient for business. No “plugins for everything” — I find the root cause, fix it, verify the result, and send a short report.",
+    "cta": {
+      "primary": "Message me",
+      "secondary": "View mini-cases"
+    },
+    "pills": {
+      "code": "Quickly understand someone else’s code",
+      "safe": "Careful changes without breaking production",
+      "result": "Focus on outcomes, not process"
+    }
+  },
+  "profile": {
+    "avatarAlt": "Pavlo — WordPress developer",
+    "name": "Pavlo",
+    "subtitle": "10+ years in WordPress • 500+ projects",
+    "emailLabel": "Email:",
+    "telegramLabel": "Telegram:"
+  },
+  "kpi": {
+    "exp": { "value": "10+ years", "label": "WordPress experience" },
+    "projects": { "value": "500+", "label": "projects completed" },
+    "optimizations": { "value": "100+", "label": "performance optimizations" },
+    "fixes": { "value": "300+", "label": "fixes & improvements" }
+  },
+  "benefits": {
+    "title": "What you get",
+    "body": "A clear plan, step-by-step execution, and a summary of “before / after”. If the task can’t be solved with a “quick fix”, I’ll tell you upfront."
+  },
+  "services": {
+    "title": "Services",
+    "items": {
+      "performance": {
+        "title": "Performance optimization (Core Web Vitals)",
+        "body": "CLS/LCP/INP, critical CSS, JS, fonts, images, caching/server. I optimize in a way that improves speed without breaking layout or functionality."
+      },
+      "fixes": {
+        "title": "Bug fixes and improvements in WordPress",
+        "body": "Themes/plugins, forms, multilingual, WooCommerce, integrations. I quickly find the root cause and fix it without side effects."
+      },
+      "maintenance": {
+        "title": "Technical support and stability",
+        "body": "Updates, backups, security, monitoring, urgent incidents. I keep the site running so it earns money instead of causing stress."
+      }
+    }
+  },
+  "process": {
+    "title": "How I work",
+    "steps": {
+      "step1": {
+        "title": "1) Diagnosis",
+        "body": "I review symptoms, logs, Lighthouse/PSI, plugins, theme, and critical requests. Then I compile a short list of root causes."
+      },
+      "step2": {
+        "title": "2) Plan & estimate",
+        "body": "I prioritize what brings the biggest impact with the lowest risk. We agree on scope, timing, and reporting format."
+      },
+      "step3": {
+        "title": "3) Implementation",
+        "body": "Step-by-step with checkpoints. If needed — staging/backup, targeted changes, minimal “magic”."
+      },
+      "step4": {
+        "title": "4) Verification & summary",
+        "body": "Re-testing, “before/after” measurements, and a list of what was done. I also suggest next steps if you want more gains."
+      }
+    }
+  },
+  "cases": {
+    "title": "3 mini cases “Before / After”",
+    "items": {
+      "lcp": {
+        "title": "Speed (LCP)",
+        "badge": "Performance",
+        "metric": "4.8s → 2.2s",
+        "delta": "(-54%)",
+        "bodyHtml": "Before: a heavy hero section, late loading of critical CSS and fonts.<br />After: optimized hero, critical CSS + preload, faster above-the-fold rendering."
+      },
+      "cls": {
+        "title": "Layout stability (CLS)",
+        "badge": "UX",
+        "metric": "0.28 → 0.03",
+        "delta": "(-89%)",
+        "bodyHtml": "Before: blocks “jump” due to banners/fonts/dynamic elements.<br />After: fixed dimensions, correct font loading, removed layout shifts."
+      },
+      "inp": {
+        "title": "Responsiveness (INP)",
+        "badge": "Interaction",
+        "metric": "420ms → 180ms",
+        "delta": "(-57%)",
+        "bodyHtml": "Before: heavy scripts, extra event handlers, long tasks blocking the main thread.<br />After: offloaded scripts, deferred logic, optimized events and third‑party code."
+      }
+    },
+    "note": "Numbers shown are an example of the reporting format. For real cases, we’ll use your actual before/after or links to reports."
+  },
+  "formats": {
+    "title": "Collaboration formats",
+    "items": {
+      "oneTime": {
+        "title": "One-off task",
+        "badge": "One-time",
+        "body": "For a specific fix/improvement/small audit. Best when you need something done “right now” and the scope is clear.",
+        "list": {
+          "item1": "Quick analysis",
+          "item2": "Step-by-step execution",
+          "item3": "Short summary"
+        }
+      },
+      "batch": {
+        "title": "Hour package",
+        "badge": "Batch",
+        "body": "When there are many different tasks: fixes, small improvements, consultations, optimizations. Saves time on approvals.",
+        "list": {
+          "item1": "Priority backlog",
+          "item2": "Fast iterations",
+          "item3": "Transparent time tracking"
+        }
+      },
+      "monthly": {
+        "title": "Maintenance",
+        "badge": "Monthly",
+        "body": "For sites that must run reliably: updates, backups, security, monitoring, and ongoing improvements.",
+        "list": {
+          "item1": "Scheduled updates",
+          "item2": "Risk control",
+          "item3": "Regular reporting"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "subtitle": "Send a link to the website and 1–2 sentences about what bothers you (speed / bug / improvement). I’ll reply with an initial action plan."
+  },
+  "footer": {
+    "copyright": "© 2025 • WordPress Development",
+    "timezone": "Timezone: Europe/Kyiv"
+  }
+}

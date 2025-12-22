@@ -14,39 +14,74 @@
     <header class="wrap top">
       <a class="brand" href="#top">
         <span class="dot" aria-hidden="true"></span>
-        <strong>Pavlo • WordPress Developer</strong>
+        <strong data-i18n="brand.title">Pavlo • WordPress Developer</strong>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#services">Послуги</a>
-        <a href="#process">Як працюю</a>
-        <a href="#cases">Кейси</a>
-        <a href="#formats">Формати</a>
-        <a href="#contact">Контакти</a>
-      </nav>
+      <div class="topActions">
+        <nav class="nav" aria-label="Primary">
+          <a href="#services" data-i18n="nav.services">Послуги</a>
+          <a href="#process" data-i18n="nav.process">Як працюю</a>
+          <a href="#cases" data-i18n="nav.cases">Кейси</a>
+          <a href="#formats" data-i18n="nav.formats">Формати</a>
+          <a href="#contact" data-i18n="nav.contact">Контакти</a>
+        </nav>
+        <div class="langSwitch" role="group" aria-label="Language">
+          <button
+            class="langBtn"
+            type="button"
+            data-lang="uk"
+            aria-pressed="true"
+          >
+            UA
+          </button>
+          <button
+            class="langBtn"
+            type="button"
+            data-lang="en"
+            aria-pressed="false"
+          >
+            EN
+          </button>
+        </div>
+      </div>
     </header>
 
     <main id="top" class="wrap">
       <section class="hero grid heroGrid">
         <div>
           <h1 class="h1">
-            WordPress-розробник з 10+ роками досвіду: оптимізація, фікси,
-            покращення
+            <span data-i18n="hero.title"
+              >WordPress-розробник з 10+ роками досвіду: оптимізація, фікси,
+              покращення</span
+            >
           </h1>
-          <p class="sub">
+          <p class="sub" data-i18n="hero.subtitle">
             Роблю сайти швидшими, стабільнішими і зручнішими для бізнесу. Без
             зайвих “плагінів від усього” — знаходжу причину, виправляю, фіксую
             результат і даю короткий звіт.
           </p>
 
           <div class="cta">
-            <a class="btn btnPrimary" href="#contact">Написати мені</a>
-            <a class="btn" href="#cases">Подивитись міні-кейси</a>
+            <a
+              class="btn btnPrimary"
+              href="#contact"
+              data-i18n="hero.cta.primary"
+              >Написати мені</a
+            >
+            <a class="btn" href="#cases" data-i18n="hero.cta.secondary"
+              >Подивитись міні-кейси</a
+            >
           </div>
 
           <div class="pillRow">
-            <span class="pill">Швидко розбираюсь у чужому коді</span>
-            <span class="pill">Акуратні зміни без “лягти на проді”</span>
-            <span class="pill">Фокус на результат, а не процес</span>
+            <span class="pill" data-i18n="hero.pills.code"
+              >Швидко розбираюсь у чужому коді</span
+            >
+            <span class="pill" data-i18n="hero.pills.safe"
+              >Акуратні зміни без “лягти на проді”</span
+            >
+            <span class="pill" data-i18n="hero.pills.result"
+              >Фокус на результат, а не процес</span
+            >
           </div>
         </div>
 
@@ -57,36 +92,57 @@
                 class="avatar"
                 src="./assets/img/pasharadio.webp"
                 alt="Павло — WordPress-розробник"
+                data-i18n-alt="profile.avatarAlt"
                 width="72"
                 height="72"
               />
               <div>
-                <b>Павло</b>
-                <span>10+ років у WordPress • 500+ проєктів</span>
-                <span class="mutedBlockTight">Email:
+                <b data-i18n="profile.name">Павло</b>
+                <span data-i18n="profile.subtitle"
+                  >10+ років у WordPress • 500+ проєктів</span
+                >
+                <span class="mutedBlockTight">
+                  <span data-i18n="profile.emailLabel">Email:</span>
                   <a href="mailto:bonddesign85@gmail.com"
                     >bonddesign85@gmail.com</a
-                  ></span
-                <span class="mutedBlock">Telegram:
-                  <a href="https://t.me/bonddesign">t.me/bonddesign</a></span
+                  >
+                </span>
+                <span class="mutedBlock">
+                  <span data-i18n="profile.telegramLabel">Telegram:</span>
+                  <a href="https://t.me/bonddesign">t.me/bonddesign</a>
+                </span>
               </div>
             </div>
           </div>
 
           <div class="card">
             <div class="kpi" aria-label="Key metrics">
-              <div><strong>10+ років</strong><span>WordPress досвід</span></div>
-              <div><strong>500+</strong><span>виконаних проєктів</span></div>
-              <div><strong>100+</strong><span>оптимізацій швидкодії</span></div>
               <div>
-                <strong>300+</strong><span>виправлень і покращень</span>
+                <strong data-i18n="kpi.exp.value">10+ років</strong
+                ><span data-i18n="kpi.exp.label">WordPress досвід</span>
+              </div>
+              <div>
+                <strong data-i18n="kpi.projects.value">500+</strong
+                ><span data-i18n="kpi.projects.label">виконаних проєктів</span>
+              </div>
+              <div>
+                <strong data-i18n="kpi.optimizations.value">100+</strong
+                ><span data-i18n="kpi.optimizations.label"
+                  >оптимізацій швидкодії</span
+                >
+              </div>
+              <div>
+                <strong data-i18n="kpi.fixes.value">300+</strong
+                ><span data-i18n="kpi.fixes.label">виправлень і покращень</span>
               </div>
             </div>
           </div>
 
           <div class="card cardNote">
-            <strong class="cardNoteTitle">Що ви отримаєте</strong>
-            <span class="muted">
+            <strong class="cardNoteTitle" data-i18n="benefits.title"
+              >Що ви отримаєте</strong
+            >
+            <span class="muted" data-i18n="benefits.body">
               Зрозумілий план, виконання по кроках, і підсумок “що було / що
               стало”. Якщо задача не вирішується “швидким фіксом” — скажу це
               одразу.
@@ -96,25 +152,31 @@
       </section>
 
       <section id="services" class="section">
-        <h2 class="title">Послуги</h2>
+        <h2 class="title" data-i18n="services.title">Послуги</h2>
         <div class="cards">
           <div class="card item">
-            <h3>Оптимізація швидкодії (Core Web Vitals)</h3>
-            <p>
+            <h3 data-i18n="services.items.performance.title">
+              Оптимізація швидкодії (Core Web Vitals)
+            </h3>
+            <p data-i18n="services.items.performance.body">
               CLS/LCP/INP, критичні стилі, JS, шрифти, зображення, кеш/сервер.
               Працюю так, щоб швидкість не ламала верстку і функціонал.
             </p>
           </div>
           <div class="card item">
-            <h3>Виправлення багів і доробки на WordPress</h3>
-            <p>
+            <h3 data-i18n="services.items.fixes.title">
+              Виправлення багів і доробки на WordPress
+            </h3>
+            <p data-i18n="services.items.fixes.body">
               Теми/плагіни, форми, мультимовність, WooCommerce, інтеграції.
               Швидко знаходжу першопричину і фікшу без побічних сюрпризів.
             </p>
           </div>
           <div class="card item">
-            <h3>Технічний супровід і стабільність</h3>
-            <p>
+            <h3 data-i18n="services.items.maintenance.title">
+              Технічний супровід і стабільність
+            </h3>
+            <p data-i18n="services.items.maintenance.body">
               Оновлення, бекапи, безпека, моніторинг, “пожежі”. Підтримую сайт у
               робочому стані, щоб він заробляв, а не нервував.
             </p>
@@ -123,32 +185,32 @@
       </section>
 
       <section id="process" class="section">
-        <h2 class="title">Як я працюю</h2>
+        <h2 class="title" data-i18n="process.title">Як я працюю</h2>
         <div class="steps">
           <div class="card step">
-            <b>1) Діагностика</b
-            ><span style="color: var(--muted)"
+            <b data-i18n="process.steps.step1.title">1) Діагностика</b>
+            <span class="muted" data-i18n="process.steps.step1.body"
               >Дивлюсь симптоми, логи, Lighthouse/PSI, плагіни, тему, критичні
               запити. Формую короткий список причин.</span
             >
           </div>
           <div class="card step">
-            <b>2) План і оцінка</b
-            ><span style="color: var(--muted)"
+            <b data-i18n="process.steps.step2.title">2) План і оцінка</b>
+            <span class="muted" data-i18n="process.steps.step2.body"
               >Пріоритезую: що дасть найбільший ефект за найменший ризик.
               Узгоджуємо обсяг, строки, формат звітності.</span
             >
           </div>
           <div class="card step">
-            <b>3) Впровадження</b
-            ><span style="color: var(--muted)"
+            <b data-i18n="process.steps.step3.title">3) Впровадження</b>
+            <span class="muted" data-i18n="process.steps.step3.body"
               >Поетапно, з контрольними точками. За потреби — staging/backup,
               точкові зміни, мінімум “магії”.</span
             >
           </div>
           <div class="card step">
-            <b>4) Перевірка і підсумок</b
-            ><span style="color: var(--muted)"
+            <b data-i18n="process.steps.step4.title">4) Перевірка і підсумок</b>
+            <span class="muted" data-i18n="process.steps.step4.body"
               >Перетест, виміри “до/після”, список зробленого. Даю рекомендації,
               що робити далі, якщо хочете ще приріст.</span
             >
@@ -157,18 +219,26 @@
       </section>
 
       <section id="cases" class="section">
-        <h2 class="title">3 міні-кейси “Було / Стало”</h2>
+        <h2 class="title" data-i18n="cases.title">
+          3 міні-кейси “Було / Стало”
+        </h2>
         <div class="cases">
           <div class="card">
             <div class="caseTop">
-              <strong>Швидкість (LCP)</strong>
-              <span class="badge">Performance</span>
+              <strong data-i18n="cases.items.lcp.title">Швидкість (LCP)</strong>
+              <span class="badge" data-i18n="cases.items.lcp.badge"
+                >Performance</span
+              >
             </div>
             <div class="caseTop caseTopTight">
-              <span class="metric">4.8s → 2.2s</span>
-              <span class="delta">(-54%)</span>
+              <span class="metric" data-i18n="cases.items.lcp.metric"
+                >4.8s → 2.2s</span
+              >
+              <span class="delta" data-i18n="cases.items.lcp.delta"
+                >(-54%)</span
+              >
             </div>
-            <p class="caseText">
+            <p class="caseText" data-i18n-html="cases.items.lcp.bodyHtml">
               Було: важкий “hero”, пізнє завантаження критичних стилів і
               шрифтів.<br />
               Стало: оптимізований “hero”, критичний CSS + preload, швидший
@@ -178,14 +248,20 @@
 
           <div class="card">
             <div class="caseTop">
-              <strong>Стабільність верстки (CLS)</strong>
-              <span class="badge">UX</span>
+              <strong data-i18n="cases.items.cls.title"
+                >Стабільність верстки (CLS)</strong
+              >
+              <span class="badge" data-i18n="cases.items.cls.badge">UX</span>
             </div>
             <div class="caseTop caseTopTight">
-              <span class="metric">0.28 → 0.03</span>
-              <span class="delta">(-89%)</span>
+              <span class="metric" data-i18n="cases.items.cls.metric"
+                >0.28 → 0.03</span
+              >
+              <span class="delta" data-i18n="cases.items.cls.delta"
+                >(-89%)</span
+              >
             </div>
-            <p class="caseText">
+            <p class="caseText" data-i18n-html="cases.items.cls.bodyHtml">
               Було: “стрибають” блоки через банери/шрифти/динамічні елементи.<br />
               Стало: зафіксовані розміри, правильне підключення шрифтів,
               прибрані зсуви.
@@ -194,14 +270,22 @@
 
           <div class="card">
             <div class="caseTop">
-              <strong>Відгук сайту (INP)</strong>
-              <span class="badge">Interaction</span>
+              <strong data-i18n="cases.items.inp.title"
+                >Відгук сайту (INP)</strong
+              >
+              <span class="badge" data-i18n="cases.items.inp.badge"
+                >Interaction</span
+              >
             </div>
             <div class="caseTop caseTopTight">
-              <span class="metric">420ms → 180ms</span>
-              <span class="delta">(-57%)</span>
+              <span class="metric" data-i18n="cases.items.inp.metric"
+                >420ms → 180ms</span
+              >
+              <span class="delta" data-i18n="cases.items.inp.delta"
+                >(-57%)</span
+              >
             </div>
-            <p class="caseText">
+            <p class="caseText" data-i18n-html="cases.items.inp.bodyHtml">
               Було: важкі скрипти, зайві обробники подій, блокуючі задачі в main
               thread.<br />
               Стало: розвантажені скрипти, deferred логіка, оптимізація подій і
@@ -209,60 +293,86 @@
             </p>
           </div>
         </div>
-        <p class="casesNote">
+        <p class="casesNote" data-i18n="cases.note">
           Цифри наведені як приклад формату подачі. Під реальні кейси —
           підставимо ваші “до/після” або посилання на звіти.
         </p>
       </section>
 
       <section id="formats" class="section">
-        <h2 class="title">Формати співпраці</h2>
+        <h2 class="title" data-i18n="formats.title">Формати співпраці</h2>
         <div class="pricing">
           <div class="card">
             <div class="priceTitle">
-              <strong>Разова задача</strong>
-              <span class="badge">One-time</span>
+              <strong data-i18n="formats.items.oneTime.title"
+                >Разова задача</strong
+              >
+              <span class="badge" data-i18n="formats.items.oneTime.badge"
+                >One-time</span
+              >
             </div>
-            <p class="caseText">
+            <p class="caseText" data-i18n="formats.items.oneTime.body">
               Для конкретного фіксу/доробки/малого аудиту. Підходить, коли
               потрібно “тут і зараз” і зрозумілий обсяг.
             </p>
             <ul class="listMuted">
-              <li>Швидкий аналіз</li>
-              <li>Виконання по кроках</li>
-              <li>Короткий підсумок</li>
+              <li data-i18n="formats.items.oneTime.list.item1">
+                Швидкий аналіз
+              </li>
+              <li data-i18n="formats.items.oneTime.list.item2">
+                Виконання по кроках
+              </li>
+              <li data-i18n="formats.items.oneTime.list.item3">
+                Короткий підсумок
+              </li>
             </ul>
           </div>
 
           <div class="card">
             <div class="priceTitle">
-              <strong>Пакет годин</strong>
-              <span class="badge">Batch</span>
+              <strong data-i18n="formats.items.batch.title">Пакет годин</strong>
+              <span class="badge" data-i18n="formats.items.batch.badge"
+                >Batch</span
+              >
             </div>
-            <p class="caseText">
+            <p class="caseText" data-i18n="formats.items.batch.body">
               Коли задач багато і вони різні: фікси, дрібні покращення,
               консультації, оптимізації. Економить час на погодженнях.
             </p>
             <ul class="listMuted">
-              <li>Пріоритетний беклог</li>
-              <li>Швидкі ітерації</li>
-              <li>Прозорий облік часу</li>
+              <li data-i18n="formats.items.batch.list.item1">
+                Пріоритетний беклог
+              </li>
+              <li data-i18n="formats.items.batch.list.item2">
+                Швидкі ітерації
+              </li>
+              <li data-i18n="formats.items.batch.list.item3">
+                Прозорий облік часу
+              </li>
             </ul>
           </div>
 
           <div class="card">
             <div class="priceTitle">
-              <strong>Супровід</strong>
-              <span class="badge">Monthly</span>
+              <strong data-i18n="formats.items.monthly.title">Супровід</strong>
+              <span class="badge" data-i18n="formats.items.monthly.badge"
+                >Monthly</span
+              >
             </div>
-            <p class="caseText">
+            <p class="caseText" data-i18n="formats.items.monthly.body">
               Для сайтів, які мають працювати стабільно: оновлення, бекапи,
               безпека, моніторинг і регулярні покращення.
             </p>
             <ul class="listMuted">
-              <li>Планові оновлення</li>
-              <li>Контроль ризиків</li>
-              <li>Регулярний звіт</li>
+              <li data-i18n="formats.items.monthly.list.item1">
+                Планові оновлення
+              </li>
+              <li data-i18n="formats.items.monthly.list.item2">
+                Контроль ризиків
+              </li>
+              <li data-i18n="formats.items.monthly.list.item3">
+                Регулярний звіт
+              </li>
             </ul>
           </div>
         </div>
@@ -270,8 +380,10 @@
 
       <section id="contact" class="section">
         <div class="card contactCard">
-          <h2 class="title contactTitle">Написати мені</h2>
-          <p class="sub contactSub">
+          <h2 class="title contactTitle" data-i18n="contact.title">
+            Написати мені
+          </h2>
+          <p class="sub contactSub" data-i18n="contact.subtitle">
             Надішліть посилання на сайт і 1–2 речення: що саме не влаштовує
             (швидкість / баг / доробка). Я відповім з першим планом дій.
           </p>
@@ -286,12 +398,15 @@
 
       <footer class="footer">
         <div class="footerRow">
-          <span>© 2025 • WordPress Development</span>
-          <span>Timezone: Europe/Kyiv</span>
+          <span data-i18n="footer.copyright"
+            >© 2025 • WordPress Development</span
+          >
+          <span data-i18n="footer.timezone">Timezone: Europe/Kyiv</span>
         </div>
       </footer>
     </main>
 
+    <script defer src="./assets/js/i18n.js"></script>
     <script defer src="./assets/js/main.js"></script>
   </body>
 </html>

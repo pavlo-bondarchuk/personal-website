@@ -45,6 +45,14 @@ a {
     gap: 14px;
 }
 
+.topActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 .brand {
     display: flex;
     gap: 10px;
@@ -73,6 +81,34 @@ a {
 
 .nav a:hover {
     border-bottom-color: var(--line);
+}
+
+.langSwitch {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.langBtn {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: inherit;
+    border-radius: 999px;
+    padding: 8px 10px;
+    font: inherit;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.langBtn:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.langBtn.isActive {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .hero {
