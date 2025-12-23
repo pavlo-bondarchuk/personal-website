@@ -8,59 +8,42 @@ function initSmartStickyHeader() {
   let lastY = window.scrollY || 0;
   let ticking = false;
   const threshold = 4;
-  const overshootPx = 10;
-  const overshootDelayMs = 140;
-  let showTimer = null;
+  let hideTimer = null;
 
-  function getHeaderHeight() {
-    return header.offsetHeight || 0;
-  }
+  function setSticky(enabled) {
+    if (enabled) {
+      if (hideTimer) {
+        window.clearTimeout(hideTimer);
+        hideTimer = null;
+      }
 
-  function setSpacerHeight(px) {
-    spacer.style.height = `${Math.max(0, Math.round(px))}px`;
-  }
+      header.classList.add("isSticky");
+      spacer.style.height = `${header.offsetHeight}px`;
 
-  function clearShowTimer() {
-    if (showTimer) {
-      window.clearTimeout(showTimer);
-      showTimer = null;
-    }
-  }
-
-  function showHeader(withOvershoot) {
-    clearShowTimer();
-    const headerH = getHeaderHeight();
-
-    // Keep content from sitting under the fixed header.
-    setSpacerHeight(headerH);
-
-    if (!withOvershoot) {
-      header.style.top = "0px";
+      // Next frame: trigger transition in.
+      window.requestAnimationFrame(() => {
+        header.classList.add("isShown");
+      });
       return;
     }
 
-    // Slightly overshoot down, then smoothly settle to 0.
-    header.style.top = `${overshootPx}px`;
-    showTimer = window.setTimeout(() => {
-      header.style.top = "0px";
-      showTimer = null;
-    }, overshootDelayMs);
-  }
-
-  function hideHeader() {
-    clearShowTimer();
-    const headerH = getHeaderHeight();
-    header.style.top = `-${headerH}px`;
-    setSpacerHeight(0);
+    // Transition out first; then remove fixed positioning.
+    header.classList.remove("isShown");
+    if (hideTimer) window.clearTimeout(hideTimer);
+    hideTimer = window.setTimeout(() => {
+      header.classList.remove("isSticky");
+      spacer.style.height = "0px";
+      hideTimer = null;
+    }, 170);
   }
 
   function update() {
     const y = window.scrollY || 0;
-    const headerH = getHeaderHeight();
+    const headerH = header.offsetHeight || 0;
 
-    // At the top of the page, always show header in the normal position.
+    // Near the top, keep the normal (non-sticky) header.
     if (y <= headerH) {
-      showHeader(false);
+      setSticky(false);
       lastY = y;
       return;
     }
@@ -69,11 +52,11 @@ function initSmartStickyHeader() {
     if (Math.abs(delta) < threshold) return;
 
     if (delta < 0) {
-      // Scrolling up => show with a bit of “top-down” feel.
-      showHeader(true);
+      // Scrolling up => user likely wants header/nav.
+      setSticky(true);
     } else {
-      // Scrolling down => hide by moving above the viewport.
-      hideHeader();
+      // Scrolling down => header not needed.
+      setSticky(false);
     }
 
     lastY = y;
@@ -92,17 +75,7 @@ function initSmartStickyHeader() {
     { passive: true }
   );
 
-  window.addEventListener("resize", () => {
-    // Re-apply current state using the updated header height.
-    update();
-  });
-
-  // Initialize: show at top, otherwise start hidden.
-  if ((window.scrollY || 0) <= getHeaderHeight()) {
-    showHeader(false);
-  } else {
-    hideHeader();
-  }
+  update();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
