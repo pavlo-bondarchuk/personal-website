@@ -108,33 +108,6 @@
     },
     "note": "You can quickly assess my level from reviews and examples. If needed, I’ll send relevant cases for your specific task."
   },
-  "cases": {
-    "title": "3 mini cases “Before / After”",
-    "items": {
-      "lcp": {
-        "title": "Speed (LCP)",
-        "badge": "Performance",
-        "metric": "4.8s → 2.2s",
-        "delta": "(-54%)",
-        "bodyHtml": "Before: a heavy hero section, late loading of critical CSS and fonts.<br />After: optimized hero, critical CSS + preload, faster above-the-fold rendering."
-      },
-      "cls": {
-        "title": "Layout stability (CLS)",
-        "badge": "UX",
-        "metric": "0.28 → 0.03",
-        "delta": "(-89%)",
-        "bodyHtml": "Before: blocks “jump” due to banners/fonts/dynamic elements.<br />After: fixed dimensions, correct font loading, removed layout shifts."
-      },
-      "inp": {
-        "title": "Responsiveness (INP)",
-        "badge": "Interaction",
-        "metric": "420ms → 180ms",
-        "delta": "(-57%)",
-        "bodyHtml": "Before: heavy scripts, extra event handlers, long tasks blocking the main thread.<br />After: offloaded scripts, deferred logic, optimized events and third‑party code."
-      }
-    },
-    "note": "Numbers shown are an example of the reporting format. For real cases, we’ll use your actual before/after or links to reports."
-  },
   "formats": {
     "title": "Collaboration formats",
     "items": {
