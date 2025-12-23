@@ -18,7 +18,7 @@
     "subtitle": "I make websites faster, more stable, and more convenient for business. No “plugins for everything” — I find the root cause, fix it, verify the result, and send a short report.",
     "cta": {
       "primary": "Message me",
-      "secondary": "View mini-cases"
+      "secondary": "See reviews & portfolio"
     },
     "pills": {
       "code": "Quickly understand someone else’s code",
@@ -80,6 +80,33 @@
         "body": "Re-testing, “before/after” measurements, and a list of what was done. I also suggest next steps if you want more gains."
       }
     }
+  },
+  "proof": {
+    "title": "Proof: reviews and portfolio",
+    "cards": {
+      "reviews": {
+        "title": "Client reviews",
+        "badge": "Freelancehunt",
+        "metric": "100+ excellent reviews",
+        "delta": "from real clients",
+        "cta": "View reviews"
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "badge": "Freelancehunt",
+        "metric": "Large portfolio",
+        "delta": "across many niches",
+        "cta": "View portfolio"
+      },
+      "github": {
+        "title": "GitHub",
+        "badge": "Code",
+        "metric": "Public projects",
+        "delta": "repos and tools",
+        "cta": "Open GitHub"
+      }
+    },
+    "note": "You can quickly assess my level from reviews and examples. If needed, I’ll send relevant cases for your specific task."
   },
   "cases": {
     "title": "3 mini cases “Before / After”",
