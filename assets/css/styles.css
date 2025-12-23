@@ -101,6 +101,88 @@ a {
     align-items: center;
 }
 
+.menuToggle {
+    display: none;
+    appearance: none;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: inherit;
+    border-radius: 999px;
+    width: 38px;
+    height: 34px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuToggle:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.menuIcon {
+    width: 16px;
+    height: 12px;
+    position: relative;
+    display: block;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(229, 231, 235, 0.9);
+}
+
+.menuIcon::before {
+    top: 0;
+    box-shadow: 0 5px 0 rgba(229, 231, 235, 0.9);
+}
+
+.menuIcon::after {
+    bottom: 0;
+}
+
+.mobileMenu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--mobileMenuTop, 0px);
+    height: calc(100dvh - var(--mobileMenuTop, 0px));
+    background: rgba(11, 15, 23, 0.98);
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(6px);
+    padding: 18px;
+    z-index: 999;
+    overflow: auto;
+}
+
+.mobileNav {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    gap: 10px;
+}
+
+.mobileNav a {
+    text-decoration: none;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(17, 24, 39, 0.52);
+}
+
+.mobileNav a:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.isMenuOpen {
+    overflow: hidden;
+}
+
 .langBtn {
     appearance: none;
     border: 1px solid var(--line);
@@ -414,6 +496,14 @@ a {
 }
 
 @media (max-width: 900px) {
+    .nav {
+        display: none;
+    }
+
+    .menuToggle {
+        display: inline-flex;
+    }
+
     .heroGrid {
         grid-template-columns: 1fr;
     }

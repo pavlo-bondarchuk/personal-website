@@ -42,9 +42,29 @@
             EN
           </button>
         </div>
+        <button
+          id="menuToggle"
+          class="menuToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+        >
+          <span class="menuIcon" aria-hidden="true"></span>
+        </button>
       </div>
     </header>
     <div id="headerSpacer" aria-hidden="true"></div>
+
+    <div id="mobileMenu" class="mobileMenu" hidden>
+      <nav class="mobileNav" aria-label="Primary">
+        <a href="#services" data-i18n="nav.services">Послуги</a>
+        <a href="#process" data-i18n="nav.process">Як працюю</a>
+        <a href="#cases" data-i18n="nav.cases">Кейси</a>
+        <a href="#formats" data-i18n="nav.formats">Формати</a>
+        <a href="#contact" data-i18n="nav.contact">Контакти</a>
+      </nav>
+    </div>
 
     <main id="top" class="wrap">
       <section class="hero grid heroGrid">
