@@ -40,15 +40,10 @@ a {
 
 #headerSpacer {
     height: 0;
+    transition: height 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .siteHeader {
-    transition: transform 160ms ease, opacity 160ms ease, background-color 160ms ease,
-        border-color 160ms ease;
-    will-change: transform;
-}
-
-.siteHeader.isSticky {
     position: fixed;
     top: 0;
     left: 0;
@@ -56,13 +51,18 @@ a {
     z-index: 50;
     background: var(--bg);
     border-bottom: 1px solid var(--line);
-    transform: translateY(-8px);
-    opacity: 0;
+    transition: top 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        background-color 160ms ease, border-color 160ms ease;
+    will-change: top;
+}
+
+/* Legacy classes kept for backward compatibility (JS no longer uses them). */
+.siteHeader.isSticky {
+    /* no-op */
 }
 
 .siteHeader.isSticky.isShown {
-    transform: translateY(0);
-    opacity: 1;
+    /* no-op */
 }
 
 .top {
