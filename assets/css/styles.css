@@ -73,6 +73,7 @@ a {
 }
 
 .dot {
+    flex-shrink: 0;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -345,7 +346,6 @@ body.isMenuOpen {
 .profile {
     display: flex;
     gap: 12px;
-    align-items: center;
 }
 
 .avatar {
