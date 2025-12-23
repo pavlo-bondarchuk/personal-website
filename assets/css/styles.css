@@ -286,6 +286,8 @@ body.isMenuOpen {
 
 .section {
     padding: 26px 0;
+    scroll-padding-top: 100px;
+    scroll-margin-top: 100px;
 }
 
 .title {
