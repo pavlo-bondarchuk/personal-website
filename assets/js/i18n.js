@@ -138,7 +138,11 @@ function setActiveLangButton(lang) {
 
 function updateUrlLang(lang) {
   const url = new URL(window.location.href);
-  url.searchParams.set("lang", lang);
+  if (lang === "en") {
+    url.searchParams.set("lang", "en");
+  } else {
+    url.searchParams.delete("lang");
+  }
   history.replaceState(null, "", url.toString());
 }
 
