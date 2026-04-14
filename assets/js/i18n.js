@@ -91,6 +91,42 @@ function applyTranslations(dict) {
   }
 }
 
+function setMeta(selector, attr, value) {
+  const el = document.querySelector(selector);
+  if (el) {
+    el.setAttribute(attr, value);
+  } else {
+    console.warn(`[i18n] Meta element not found: ${selector}`);
+  }
+}
+
+function updateSeoMeta(lang, dict) {
+  const isEn = lang === "en";
+  const pageUrl = isEn
+    ? "https://bonddesign.top/?lang=en"
+    : "https://bonddesign.top/";
+  const locale = isEn ? "en_US" : "uk_UA";
+  const localeAlt = isEn ? "uk_UA" : "en_US";
+  const title =
+    dict && dict.meta && typeof dict.meta.title === "string"
+      ? dict.meta.title
+      : document.title;
+  const existingDesc = document.querySelector('meta[name="description"]');
+  const description =
+    dict && dict.meta && typeof dict.meta.description === "string"
+      ? dict.meta.description
+      : (existingDesc ? existingDesc.getAttribute("content") : "");
+
+  setMeta('link[rel="canonical"]', "href", pageUrl);
+  setMeta('meta[property="og:url"]', "content", pageUrl);
+  setMeta('meta[property="og:title"]', "content", title);
+  setMeta('meta[property="og:description"]', "content", description);
+  setMeta('meta[property="og:locale"]', "content", locale);
+  setMeta('meta[property="og:locale:alternate"]', "content", localeAlt);
+  setMeta('meta[name="twitter:title"]', "content", title);
+  setMeta('meta[name="twitter:description"]', "content", description);
+}
+
 function setActiveLangButton(lang) {
   const buttons = document.querySelectorAll(".langBtn[data-lang]");
   for (const btn of buttons) {
@@ -120,6 +156,7 @@ async function loadLanguage(lang) {
   }
 
   applyTranslations(dict);
+  updateSeoMeta(nextLang, dict);
   document.documentElement.setAttribute("lang", nextLang);
   setActiveLangButton(nextLang);
 
