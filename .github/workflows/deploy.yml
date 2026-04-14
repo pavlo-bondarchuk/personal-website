@@ -40,3 +40,13 @@ jobs:
             **/README.md
             **/node_modules/**
             **/.DS_Store
+            .git
+            .git/**
+            .vscode
+            .vscode/**
+            .ftp-deploy-sync-state.json
+            LICENSE
+            README.md
+            personal-website-main
+            personal-website-main/**
+            *.zip
