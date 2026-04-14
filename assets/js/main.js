@@ -76,3 +76,63 @@ function initMobileMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", initMobileMenu);
+(function () {
+  function getCurrentLang() {
+    return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'uk';
+  }
+
+  function trackEvent(name, params) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params || {});
+  }
+
+  function bindClick(selector, eventName, section) {
+    var nodes = document.querySelectorAll(selector);
+
+    nodes.forEach(function (node) {
+      node.addEventListener('click', function () {
+        trackEvent(eventName, {
+          lang: getCurrentLang(),
+          section: section,
+          link_url: node.getAttribute('href') || ''
+        });
+      });
+    });
+  }
+
+  function bindLanguageSwitch() {
+    var buttons = document.querySelectorAll('.langBtn[data-lang]');
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        trackEvent('language_switch', {
+          lang: button.getAttribute('data-lang') || '',
+          section: 'header'
+        });
+      });
+    });
+  }
+
+  function initAnalyticsEvents() {
+    bindClick('.hero .btnPrimary[href="#contact"]', 'click_primary_cta', 'hero');
+    bindClick('.hero .btn[href="#cases"]', 'click_secondary_cta', 'hero');
+
+    bindClick('.profile a[href^="mailto:"]', 'click_email', 'profile');
+    bindClick('.contactCard a[href^="mailto:"]', 'click_email', 'contact');
+
+    bindClick('.profile a[href*="t.me/bonddesign"]', 'click_telegram', 'profile');
+    bindClick('.contactCard a[href*="t.me/bonddesign"]', 'click_telegram', 'contact');
+
+    bindClick('a[href="https://github.com/pavlo-bondarchuk"]', 'click_github', 'cases');
+    bindClick('a[href="https://freelancehunt.com/freelancer/pasharadio.html#reviews"]', 'click_freelancehunt_reviews', 'cases');
+    bindClick('a[href="https://freelancehunt.com/freelancer/pasharadio.html#portfolio"]', 'click_freelancehunt_portfolio', 'cases');
+
+    bindLanguageSwitch();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnalyticsEvents);
+  } else {
+    initAnalyticsEvents();
+  }
+})();
