@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
     <header id="siteHeader" class="wrap top siteHeader">
       <a class="brand" href="#top">
         <span class="dot" aria-hidden="true"></span>
@@ -110,7 +111,7 @@
 
     <main id="top" class="wrap">
       <section class="hero grid heroGrid">
-        <div>
+        <div class="heroContent">
           <h1 class="h1">
             <span data-i18n="hero.title"
               >WordPress-розробник з 10+ роками досвіду: оптимізація, фікси,
@@ -214,10 +215,10 @@
         </aside>
       </section>
 
-      <section id="services" class="section">
+      <section id="services" class="section reveal">
         <h2 class="title" data-i18n="services.title">Послуги</h2>
         <div class="cards">
-          <div class="card item">
+          <div class="card item reveal-card">
             <h3 data-i18n="services.items.performance.title">
               Оптимізація швидкодії (Core Web Vitals)
             </h3>
@@ -226,7 +227,7 @@
               Працюю так, щоб швидкість не ламала верстку і функціонал.
             </p>
           </div>
-          <div class="card item">
+          <div class="card item reveal-card">
             <h3 data-i18n="services.items.fixes.title">
               Виправлення багів і доробки на WordPress
             </h3>
@@ -235,7 +236,7 @@
               Швидко знаходжу першопричину і фікшу без побічних сюрпризів.
             </p>
           </div>
-          <div class="card item">
+          <div class="card item reveal-card">
             <h3 data-i18n="services.items.maintenance.title">
               Технічний супровід і стабільність
             </h3>
@@ -247,31 +248,31 @@
         </div>
       </section>
 
-      <section id="process" class="section">
+      <section id="process" class="section reveal">
         <h2 class="title" data-i18n="process.title">Як я працюю</h2>
         <div class="steps">
-          <div class="card step">
+          <div class="card step reveal-card">
             <b data-i18n="process.steps.step1.title">1) Діагностика</b>
             <span class="muted" data-i18n="process.steps.step1.body"
               >Дивлюсь симптоми, логи, Lighthouse/PSI, плагіни, тему, критичні
               запити. Формую короткий список причин.</span
             >
           </div>
-          <div class="card step">
+          <div class="card step reveal-card">
             <b data-i18n="process.steps.step2.title">2) План і оцінка</b>
             <span class="muted" data-i18n="process.steps.step2.body"
               >Пріоритезую: що дасть найбільший ефект за найменший ризик.
               Узгоджуємо обсяг, строки, формат звітності.</span
             >
           </div>
-          <div class="card step">
+          <div class="card step reveal-card">
             <b data-i18n="process.steps.step3.title">3) Впровадження</b>
             <span class="muted" data-i18n="process.steps.step3.body"
               >Поетапно, з контрольними точками. За потреби — staging/backup,
               точкові зміни, мінімум “магії”.</span
             >
           </div>
-          <div class="card step">
+          <div class="card step reveal-card">
             <b data-i18n="process.steps.step4.title">4) Перевірка і підсумок</b>
             <span class="muted" data-i18n="process.steps.step4.body"
               >Перетест, виміри “до/після”, список зробленого. Даю рекомендації,
@@ -281,13 +282,13 @@
         </div>
       </section>
 
-      <section id="cases" class="section">
+      <section id="cases" class="section reveal">
         <h2 class="title" data-i18n="proof.title">
           Докази: відгуки та портфоліо
         </h2>
 
         <div class="cases">
-          <div class="card">
+          <div class="card reveal-card proof-panel">
             <div class="caseTop">
               <strong data-i18n="proof.cards.reviews.title"
                 >Відгуки клієнтів</strong
@@ -318,7 +319,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card reveal-card proof-panel">
             <div class="caseTop">
               <strong data-i18n="proof.cards.portfolio.title"
                 >Портфоліо робіт</strong
@@ -349,7 +350,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card reveal-card proof-panel">
             <div class="caseTop">
               <strong data-i18n="proof.cards.github.title">GitHub</strong>
               <span class="badge" data-i18n="proof.cards.github.badge"
@@ -385,10 +386,10 @@
         </p>
       </section>
 
-      <section id="formats" class="section">
+      <section id="formats" class="section reveal">
         <h2 class="title" data-i18n="formats.title">Формати співпраці</h2>
         <div class="pricing">
-          <div class="card">
+          <div class="card reveal-card format-card">
             <div class="priceTitle">
               <strong data-i18n="formats.items.oneTime.title"
                 >Разова задача</strong
@@ -414,7 +415,7 @@
             </ul>
           </div>
 
-          <div class="card">
+          <div class="card reveal-card format-card">
             <div class="priceTitle">
               <strong data-i18n="formats.items.batch.title">Пакет годин</strong>
               <span class="badge" data-i18n="formats.items.batch.badge"
@@ -438,7 +439,7 @@
             </ul>
           </div>
 
-          <div class="card">
+          <div class="card reveal-card format-card">
             <div class="priceTitle">
               <strong data-i18n="formats.items.monthly.title">Супровід</strong>
               <span class="badge" data-i18n="formats.items.monthly.badge"
@@ -464,8 +465,8 @@
         </div>
       </section>
 
-      <section id="contact" class="section">
-        <div class="card contactCard">
+      <section id="contact" class="section reveal">
+        <div class="card contactCard reveal-card">
           <h2 class="title contactTitle" data-i18n="contact.title">
             Написати мені
           </h2>

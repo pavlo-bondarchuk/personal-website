@@ -4,8 +4,8 @@
     --text: #e5e7eb;
     --muted: #9ca3af;
     --line: rgba(255, 255, 255, 0.08);
-    --accent: #60a5fa;
-    --accent2: #34d399;
+    --accent: #0070BA;
+    --accent2: #8BC53D;
     --max: 1040px;
     --r: 16px;
 }
@@ -26,10 +26,25 @@ body {
             transparent 55%),
         var(--bg);
     color: var(--text);
+    overflow-x: hidden;
 }
 
 a {
     color: inherit;
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1200;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    box-shadow: 0 0 18px rgba(139, 197, 61, 0.45);
+    pointer-events: none;
 }
 
 .wrap {
@@ -44,24 +59,36 @@ a {
 
 .siteHeader {
     transition: transform 160ms ease, opacity 160ms ease, background-color 160ms ease,
-        border-color 160ms ease;
+        border-color 160ms ease, box-shadow 220ms ease;
     will-change: transform;
     position: sticky;
     top: 10px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 85px #000;
+    z-index: 1000;
+    background:
+        linear-gradient(135deg, rgba(13, 21, 33, 0.92), rgba(8, 14, 22, 0.78)),
+        rgba(11, 15, 23, 0.86);
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    box-shadow: 0 16px 80px rgba(0, 0, 0, 0.42);
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.siteHeader:hover {
+    background:
+        linear-gradient(135deg, rgba(15, 26, 40, 0.94), rgba(8, 15, 24, 0.82)),
+        rgba(11, 15, 23, 0.9);
+    box-shadow: 0 16px 84px rgba(0, 112, 186, 0.13), 0 16px 80px rgba(0, 0, 0, 0.42);
 }
 
 .topActions {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* flex-wrap: wrap; */
     justify-content: flex-end;
 }
 
@@ -70,6 +97,12 @@ a {
     gap: 10px;
     align-items: center;
     text-decoration: none;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.brand:hover {
+    color: #FFFFFF;
+    transform: translateY(-1px);
 }
 
 .dot {
@@ -78,6 +111,7 @@ a {
     height: 10px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow: 0 0 18px rgba(139, 197, 61, 0.3);
 }
 
 .nav {
@@ -90,10 +124,13 @@ a {
     opacity: 0.9;
     text-decoration: none;
     border-bottom: 1px solid transparent;
+    transition: opacity 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .nav a:hover {
-    border-bottom-color: var(--line);
+    opacity: 1;
+    color: #FFFFFF;
+    border-bottom-color: rgba(139, 197, 61, 0.5);
 }
 
 .langSwitch {
@@ -114,10 +151,13 @@ a {
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
 }
 
 .menuToggle:hover {
     border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-1px);
 }
 
 .menuIcon {
@@ -174,10 +214,13 @@ a {
     border: 1px solid var(--line);
     border-radius: 14px;
     background: rgba(17, 24, 39, 0.52);
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
 }
 
 .mobileNav a:hover {
     border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(17, 24, 39, 0.78);
+    transform: translateX(2px);
 }
 
 body.isMenuOpen {
@@ -195,10 +238,12 @@ body.isMenuOpen {
     font-size: 13px;
     line-height: 1;
     cursor: pointer;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
 }
 
 .langBtn:hover {
     border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
 }
 
 .langBtn.isActive {
@@ -219,11 +264,19 @@ body.isMenuOpen {
     grid-template-columns: 1.2fr 0.8fr;
 }
 
+.heroContent {
+    animation: heroContentIn 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.heroAside {
+    animation: heroAsideIn 860ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 .h1 {
     font-size: 42px;
     line-height: 1.1;
     margin: 0 0 12px;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
 }
 
 .sub {
@@ -249,16 +302,26 @@ body.isMenuOpen {
     border-radius: 999px;
     border: 1px solid var(--line);
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: translate 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
 .btnPrimary {
     background: linear-gradient(135deg,
-            rgba(96, 165, 250, 0.18),
-            rgba(52, 211, 153, 0.14));
+            rgba(0, 112, 186, 0.2),
+            rgba(139, 197, 61, 0.16));
 }
 
 .btn:hover {
     border-color: rgba(255, 255, 255, 0.18);
+    translate: 0 -2px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.btnPrimary:hover {
+    border-color: rgba(139, 197, 61, 0.38);
+    box-shadow: 0 12px 34px rgba(0, 112, 186, 0.18);
 }
 
 .card {
@@ -266,6 +329,14 @@ body.isMenuOpen {
     border: 1px solid var(--line);
     border-radius: var(--r);
     padding: 16px;
+    transition: translate 200ms ease, border-color 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+    translate: 0 -3px;
+    border-color: rgba(139, 197, 61, 0.22);
+    background: rgba(17, 24, 39, 0.84);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
 }
 
 .kpi {
@@ -321,6 +392,7 @@ body.isMenuOpen {
 .step b {
     display: block;
     margin-bottom: 6px;
+    color: #FFFFFF;
 }
 
 .split {
@@ -338,11 +410,20 @@ body.isMenuOpen {
     border: 1px solid var(--line);
     color: var(--muted);
     font-size: 13px;
+    transition: transform 180ms ease, border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.pill:hover {
+    transform: translateY(-1px);
+    border-color: rgba(139, 197, 61, 0.28);
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.035);
 }
 
 .heroAside {
     display: grid;
     gap: 12px;
+    position: relative;
 }
 
 .profile {
@@ -357,6 +438,12 @@ body.isMenuOpen {
     object-fit: cover;
     border: 1px solid var(--line);
     background: rgba(255, 255, 255, 0.04);
+    transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.profile:hover .avatar {
+    transform: scale(1.03);
+    border-color: rgba(139, 197, 61, 0.32);
 }
 
 .profile b {
@@ -374,6 +461,17 @@ body.isMenuOpen {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+}
+
+.cases .card {
+    display: flex;
+    min-height: 154px;
+    flex-direction: column;
+}
+
+.cases .cta {
+    margin-top: auto !important;
+    padding-top: 22px;
 }
 
 .caseTop {
@@ -415,6 +513,13 @@ body.isMenuOpen {
     border: 1px solid var(--line);
     color: var(--muted);
     font-size: 12px;
+    transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.card:hover .badge {
+    border-color: rgba(139, 197, 61, 0.28);
+    color: #FFFFFF;
+    background: rgba(139, 197, 61, 0.06);
 }
 
 .footer {
@@ -424,7 +529,6 @@ body.isMenuOpen {
     margin-top: 24px;
 }
 
-/* Refactor: previously inline styles */
 .pillRow {
     margin-top: 14px;
     display: flex;
@@ -459,6 +563,9 @@ body.isMenuOpen {
 
 .caseTopTight {
     margin-top: 0;
+    display: grid;
+    justify-content: start;
+    gap: 6px;
 }
 
 .caseText {
@@ -480,6 +587,24 @@ body.isMenuOpen {
 
 .contactCard {
     padding: 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contactCard::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background:
+        radial-gradient(520px 180px at 18% 0%, rgba(0, 112, 186, 0.16), transparent 60%),
+        radial-gradient(420px 160px at 86% 20%, rgba(139, 197, 61, 0.12), transparent 58%);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.contactCard > * {
+    position: relative;
+    z-index: 1;
 }
 
 .contactTitle {
@@ -487,7 +612,11 @@ body.isMenuOpen {
 }
 
 .contactSub {
-    margin: 0 0 14px;
+    margin: 0;
+}
+
+.contactCard .cta {
+    margin-top: 24px;
 }
 
 .footerRow {
@@ -495,6 +624,209 @@ body.isMenuOpen {
     justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
+}
+
+@keyframes heroContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroAsideIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes scrollProgress {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0.16;
+        transform: translateY(28px);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes revealCard {
+    from {
+        opacity: 0.18;
+        transform: translateY(22px) scale(0.985);
+        filter: blur(3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes revealLeft {
+    from {
+        opacity: 0.18;
+        transform: translateX(-22px);
+        filter: blur(3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes revealRight {
+    from {
+        opacity: 0.18;
+        transform: translateX(22px);
+        filter: blur(3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes accentGrow {
+    from {
+        transform: scaleX(0);
+        opacity: 0.45;
+    }
+
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@supports (animation-timeline: view()) {
+    .scroll-progress {
+        animation: scrollProgress linear both;
+        animation-timeline: scroll(root block);
+    }
+
+    .reveal {
+        animation: revealUp both;
+        animation-timeline: view();
+        animation-range: entry 8% cover 32%;
+    }
+
+    .reveal-card {
+        animation: revealCard both;
+        animation-timeline: view();
+        animation-range: entry 4% cover 34%;
+    }
+
+    .cards .reveal-card:nth-child(2),
+    .cases .reveal-card:nth-child(2),
+    .pricing .reveal-card:nth-child(2) {
+        animation-range: entry 10% cover 38%;
+    }
+
+    .cards .reveal-card:nth-child(3),
+    .cases .reveal-card:nth-child(3),
+    .pricing .reveal-card:nth-child(3) {
+        animation-range: entry 16% cover 42%;
+    }
+
+    .steps .reveal-card:nth-child(2) {
+        animation-range: entry 8% cover 36%;
+    }
+
+    .steps .reveal-card:nth-child(3) {
+        animation-range: entry 12% cover 40%;
+    }
+
+    .steps .reveal-card:nth-child(4) {
+        animation-range: entry 16% cover 44%;
+    }
+
+    .proof-panel:nth-child(odd) {
+        animation-name: revealLeft;
+    }
+
+    .proof-panel:nth-child(even) {
+        animation-name: revealRight;
+    }
+
+    .format-card {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .format-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        animation: accentGrow both;
+        animation-timeline: view();
+        animation-range: entry 14% cover 34%;
+    }
+
+    .contactCard {
+        animation-range: entry 8% cover 38%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+    }
+
+    .scroll-progress {
+        display: none;
+    }
+
+    .heroContent,
+    .heroAside,
+    .reveal,
+    .reveal-card,
+    .format-card::before {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .contactCard::before {
+        opacity: 0.35;
+    }
 }
 
 @media (max-width: 900px) {
@@ -529,6 +861,33 @@ body.isMenuOpen {
     .h1 {
         font-size: 34px;
     }
+
+    .heroAside .card:first-child {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .heroAside .card:first-child .profile {
+        min-height: 160px;
+        display: grid;
+        grid-template-columns: clamp(118px, 30vw, 154px) minmax(0, 1fr);
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .heroAside .card:first-child .avatar {
+        width: 100%;
+        height: 100%;
+        min-height: 160px;
+        border-width: 0 1px 0 0;
+        border-radius: var(--r) 0 0 var(--r);
+    }
+
+    .heroAside .card:first-child .profile > div {
+        align-self: center;
+        min-width: 0;
+        padding: 18px 18px 18px 0;
+    }
 }
 
 @media (max-width: 520px) {
@@ -538,5 +897,18 @@ body.isMenuOpen {
 
     .kpi {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .heroAside .card:first-child .profile {
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .heroAside .card:first-child .avatar {
+        min-height: 168px;
+    }
+
+    .heroAside .card:first-child .profile > div {
+        padding: 16px 14px 16px 0;
     }
 }
