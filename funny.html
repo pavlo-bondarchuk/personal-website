@@ -16,15 +16,15 @@
       name="description"
       content="Виправляю WordPress-сайти, які втрачають заявки через повільність, баги або нестабільність. 10+ років досвіду, 500+ проєктів, швидка діагностика і зрозумілий план дій."
     />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="noindex, follow" />
     <meta name="author" content="Pavlo Bondarchuk" />
-    <link rel="canonical" href="https://bonddesign.top/" />
+    <link rel="canonical" href="https://bonddesign.top/funny.html" />
     <link rel="alternate" hreflang="uk" href="https://bonddesign.top/" />
     <link rel="alternate" hreflang="en" href="https://bonddesign.top/?lang=en" />
     <link rel="alternate" hreflang="x-default" href="https://bonddesign.top/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Pavlo • WordPress Developer" />
-    <meta property="og:url" content="https://bonddesign.top/" />
+    <meta property="og:url" content="https://bonddesign.top/funny.html" />
     <meta property="og:title" content="Виправлення WordPress-сайтів — швидкість, баги, стабільність" />
     <meta property="og:description" content="Виправляю WordPress-сайти, які втрачають заявки через повільність, баги або нестабільність. 10+ років досвіду, 500+ проєктів, швидка діагностика і зрозумілий план дій." />
     <meta property="og:image" content="https://bonddesign.top/assets/img/pasharadio.webp" />
@@ -51,8 +51,21 @@
     }
     </script>
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/funny.css" />
   </head>
-  <body>
+  <body class="funnyMode">
+    <div class="funnyBackdrop" aria-hidden="true">
+      <span class="doodle sun">:)</span>
+      <span class="doodle cloud cloudOne"></span>
+      <span class="doodle cloud cloudTwo"></span>
+      <span class="doodle tower"></span>
+      <span class="doodle building buildingLeft"></span>
+      <span class="doodle building buildingRight"></span>
+      <span class="doodle wp">WP</span>
+      <span class="doodle cat">MEOW</span>
+      <span class="doodle bin">404<br />BAD<br />VIBES</span>
+      <span class="doodle banana"></span>
+    </div>
     <div class="scroll-progress" aria-hidden="true"></div>
     <header id="siteHeader" class="wrap top siteHeader">
       <a class="brand" href="#top">
@@ -79,11 +92,11 @@
         </nav>
         <a
           class="styleToggle"
-          href="./funny.html"
-          aria-label="Перемкнути на смішний дизайн"
-          title="Смішний дизайн"
+          href="./index.html"
+          aria-label="Повернути преміум дизайн"
+          title="Преміум дизайн"
         >
-          <span aria-hidden="true">:)</span>
+          <span aria-hidden="true">PRO</span>
         </a>
         <div class="langSwitch" role="group" aria-label="Language">
           <button
@@ -162,7 +175,7 @@
             <div class="profile">
               <img
                 class="avatar"
-                src="./assets/img/pasharadio.webp"
+                src="./assets/img/pavlo-doodle-avatar.webp"
                 alt="Павло — WordPress-розробник"
                 data-i18n-alt="profile.avatarAlt"
                 width="72"

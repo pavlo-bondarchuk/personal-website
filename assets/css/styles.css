@@ -139,6 +139,34 @@ a {
     align-items: center;
 }
 
+.styleToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 34px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    background: #ffdc3d;
+    color: #141414;
+    box-shadow: 0 0 22px rgba(255, 220, 61, 0.22);
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.styleToggle:hover {
+    transform: translateY(-1px) rotate(-8deg) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.28);
+    background: #ffe76d;
+    box-shadow: 0 0 28px rgba(255, 220, 61, 0.35);
+}
+
 .menuToggle {
     display: none;
     appearance: none;
