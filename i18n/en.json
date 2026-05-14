@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "WordPress Developer — optimization, fixes, improvements",
-    "description": "WordPress developer with 10+ years of experience: 500+ projects, 100+ performance optimizations, 300+ fixes and improvements. Fast, clean, with results."
+    "title": "WordPress Website Fixes — speed, bugs, stability",
+    "description": "I fix WordPress websites that lose leads because they are slow, buggy, or unstable. 10+ years of experience, 500+ projects, fast diagnosis, and a clear action plan."
   },
   "brand": {
     "title": "Pavlo • WordPress Developer"
@@ -14,16 +14,16 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "WordPress developer with 10+ years of experience: optimization, fixes, improvements",
-    "subtitle": "I make websites faster, more stable, and more convenient for business. No “plugins for everything” — I find the root cause, fix it, verify the result, and send a short report.",
+    "title": "I fix WordPress websites that lose leads because they are slow, buggy, or unstable",
+    "subtitle": "I quickly find the technical root cause, fix it carefully without unnecessary plugins, and show the result in a clear “before / after” summary.",
     "cta": {
-      "primary": "Message me",
-      "secondary": "See reviews & portfolio"
+      "primary": "Get an initial action plan",
+      "secondary": "See proof of work"
     },
     "pills": {
-      "code": "Quickly understand someone else’s code",
-      "safe": "Careful changes without breaking production",
-      "result": "Focus on outcomes, not process"
+      "code": "Fast diagnosis",
+      "safe": "Safe fixes without chaos",
+      "result": "Focus on leads and stability"
     }
   },
   "profile": {
@@ -43,20 +43,31 @@
     "title": "What you get",
     "body": "A clear plan, step-by-step execution, and a summary of “before / after”. If the task can’t be solved with a “quick fix”, I’ll tell you upfront."
   },
+  "when": {
+    "title": "When it makes sense to reach out",
+    "items": {
+      "mobile": "The website loads slowly on mobile",
+      "updates": "Something breaks after updates",
+      "commerce": "WooCommerce or forms work unreliably",
+      "plugins": "There are many plugins, but it is unclear what slows the site down",
+      "pagespeed": "PageSpeed shows issues, but there is no clear action plan",
+      "legacy": "Previous changes made the website harder to maintain"
+    }
+  },
   "services": {
     "title": "Services",
     "items": {
       "performance": {
-        "title": "Performance optimization (Core Web Vitals)",
-        "body": "CLS/LCP/INP, critical CSS, JS, fonts, images, caching/server. I optimize in a way that improves speed without breaking layout or functionality."
+        "title": "Your website loads slowly and loses potential clients",
+        "body": "I speed up WordPress without breaking layouts, forms, checkout, or critical functionality: LCP/CLS/INP, CSS, JS, fonts, images, caching, and server setup."
       },
       "fixes": {
-        "title": "Bug fixes and improvements in WordPress",
-        "body": "Themes/plugins, forms, multilingual, WooCommerce, integrations. I quickly find the root cause and fix it without side effects."
+        "title": "Bugs block leads, sales, or normal website operation",
+        "body": "I fix issues with themes, plugins, forms, multilingual setups, WooCommerce, and integrations. First I find the root cause, then I fix it without side effects."
       },
       "maintenance": {
-        "title": "Technical support and stability",
-        "body": "Updates, backups, security, monitoring, urgent incidents. I keep the site running so it earns money instead of causing stress."
+        "title": "The website should stay stable instead of creating emergencies",
+        "body": "I handle updates, backups, security, monitoring, and regular improvements so the website stays reliable and does not interrupt business processes."
       }
     }
   },
@@ -144,8 +155,8 @@
     }
   },
   "contact": {
-    "title": "Contact me",
-    "subtitle": "Send a link to the website and 1–2 sentences about what bothers you (speed / bug / improvement). I’ll reply with an initial action plan."
+    "title": "Send your website — I’ll show where to start",
+    "subtitle": "Send a link and 1–2 sentences about the issue: speed, a bug, WooCommerce, a form, mobile layout, or an improvement. I’ll reply with an initial action plan: what to check, risks, and the best first step."
   },
   "footer": {
     "copyright": "© 2012-2026 • WordPress Development",

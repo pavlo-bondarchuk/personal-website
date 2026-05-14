@@ -383,6 +383,36 @@ body.isMenuOpen {
     color: var(--muted);
 }
 
+.whenGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.whenItem {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 44px;
+}
+
+.whenItem::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow: 0 0 18px rgba(139, 197, 61, 0.28);
+}
+
+.whenItem span {
+    color: var(--text);
+    font-weight: 650;
+}
+
 .steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -846,6 +876,10 @@ body.isMenuOpen {
         grid-template-columns: 1fr;
     }
 
+    .whenGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .steps {
         grid-template-columns: 1fr 1fr;
     }
@@ -892,6 +926,10 @@ body.isMenuOpen {
 
 @media (max-width: 520px) {
     .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .whenGrid {
         grid-template-columns: 1fr;
     }
 
